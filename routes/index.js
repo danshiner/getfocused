@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/listener', function(req, res, next) {
   // res.render('listener', { title: 'Listener' });
-  res.status(200).json({ "challenge":req.params.'challenge' });
+  res.status(200).json({ "challenge":req.params.challenge });
 });
 
 module.exports = router;
