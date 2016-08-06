@@ -6,8 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/listener', function(req, res, next) {
-  res.render('listener', { title: 'Listener' });
+router.post('/listener', function(req, res, next) {
+  // res.render('listener', { title: 'Listener' });
+  res.status(200).json({ "challenge":req.body.challenge });
 });
 
 module.exports = router;
