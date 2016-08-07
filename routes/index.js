@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/listener', function(req, res, next) {
+<<<<<<< HEAD
   res.status(200).json({ "challenge":req.body.challenge });
 });
 
@@ -33,6 +34,8 @@ router.get('/tokenissuer', function(req, res, next) {
     console.log("get request worked");
   });
 
+  // res.render('listener', { title: 'Listener' });
+  res.status(200).json({ "challenge":req.body.challenge });
 });
 
 module.exports = router;
