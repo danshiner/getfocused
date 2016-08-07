@@ -10,7 +10,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/listener', function(req, res, next) {
-  res.status(200).json({ "challenge":req.body.challenge });
+
+  // DAN: update this with an if statement based on action, eventually
+  res.status(200);
+
+  req.on('data', function(event){
+
+    console.log(event);
+
+  });
+
+  // The below was for setup only
+  // res.status(200).json({ "challenge":req.body.challenge });
+
 });
 
 router.get('/tokenissuer', function(req, res, next) {
@@ -23,37 +35,11 @@ router.get('/tokenissuer', function(req, res, next) {
     res.on('data', function(d){
       console.log(d.toString());
     });
-    // console.log(res);
-    // console.log(Object.keys(res));
-    // console.log(Object.values(res));
-    // console.log(`Got response: ${res.statusCode}`);
-    // console.log(`Events: ${res._events}`);
-    // console.log(`Scope: ${res.scope}`);
-
     res.resume();
   }).on('error', (e) => {
     console.log(`Got error: ${e.message}`);
   });
 
-  // function httpGetAsync(url, callback) {
-  //   var xmlHttp = new XMLHttpRequest();
-  //   xmlHttp.onreadystatechange = function() {
-  //     if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
-  //       callback(xmlHttp.responseText);
-  //     };
-  //   };
-  //   xmlHttp.open("GET", url, true); // true for asynchronous
-  //   xmlHttp.send(null);
-  // }
-
-  // httpGetAsync(url, function(httpResponse){
-  //   accessToken = httpResponse.accessToken;
-  //   scope = httpResponse.scope;
-  //   console.log("get request worked");
-  // });
-
-  // res.render('listener', { title: 'Listener' });
-  res.status(200).json({ "challenge":req.body.challenge });
 });
 
 module.exports = router;
