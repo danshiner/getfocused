@@ -12,13 +12,14 @@ router.get('/', function(req, res, next) {
 router.post('/listener', function(req, res, next) {
 
   // DAN: update this with an if statement based on action, eventually
-  res.sendStatus(200);
 
   req.on('data', function(event){
 
     console.log(`Here is the event: ${event}`);
 
   });
+
+  res.sendStatus(200);
 
   // The below was for setup only
   // res.status(200).json({ "challenge":req.body.challenge });
