@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/listener', function(req, res, next) {
-<<<<<<< HEAD
   res.status(200).json({ "challenge":req.body.challenge });
 });
 
