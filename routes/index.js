@@ -20,7 +20,7 @@ router.post('/listener', function(req, res, next) {
     console.log(`We have a #now! Here's the string: ${event.text}`);
   };
 
-  // console.log(`Request:${JSON.stringify(req.body)}`);
+  console.log(`Request:${JSON.stringify(event)}`);
 
   res.sendStatus(200);
 
