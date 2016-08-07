@@ -15,7 +15,8 @@ router.post('/listener', function(req, res, next) {
 
 router.get('/tokenissuer', function(req, res, next) {
 
-  let url = 'https://slack.com/api/oauth.access?client_id=66952888932.66964105143&client_secret=48a0a831119bd4acbebb71ebedb09e09&code=req.query.code'
+  let queryCode = req.query.code
+  let url = `https://slack.com/api/oauth.access?client_id=66952888932.66964105143&client_secret=48a0a831119bd4acbebb71ebedb09e09&code=${req.query.code}`
 
   console.log(`req.query.code: ${req.query.code}`);
   https.get(url, (res) => {
