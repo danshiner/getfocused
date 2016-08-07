@@ -13,11 +13,7 @@ router.post('/listener', function(req, res, next) {
 
   // DAN: update this with an if statement based on action, eventually
 
-  req.on('data', function(event){
-
-    console.log(`Here is the event: ${event}`);
-
-  });
+  console.log(`Request:${req.body}`);
 
   res.sendStatus(200);
 
