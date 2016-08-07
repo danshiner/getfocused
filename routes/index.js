@@ -17,8 +17,8 @@ router.get('/tokenissuer', function(req, res, next) {
 
   let url = 'https://slack.com/api/oauth.access?client_id=66952888932.66964105143&client_secret=48a0a831119bd4acbebb71ebedb09e09&code=req.param.code'
   https.get(url, (res) => {
-    debugger;
-    console.log(Object.keys(res));
+    console.log(res);
+    // console.log(Object.keys(res));
     // console.log(Object.values(res));
     console.log(`Got response: ${res.statusCode}`);
     console.log(`Events: ${res._events}`);
