@@ -13,7 +13,14 @@ router.post('/listener', function(req, res, next) {
 
   // DAN: update this with an if statement based on action, eventually
 
-  console.log(`Request:${JSON.stringify(req.body)}`);
+  let event = req.body.event;
+  let keyword = /#now/i;
+
+  if (keyword.test(event.text)) {
+    console.log(`We have a #now! Here's the string: ${event.text}`);
+  };
+
+  // console.log(`Request:${JSON.stringify(req.body)}`);
 
   res.sendStatus(200);
 
