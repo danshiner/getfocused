@@ -12,11 +12,11 @@ router.get('/', function(req, res, next) {
 router.post('/listener', function(req, res, next) {
 
   // DAN: update this with an if statement based on action, eventually
-  res.status(200);
+  res.sendStatus(200);
 
   req.on('data', function(event){
 
-    console.log(event);
+    console.log(`Here is the event: ${event}`);
 
   });
 
