@@ -20,8 +20,8 @@ router.get('/tokenissuer', function(req, res, next) {
     console.log(Object.keys(res));
     console.log(Object.values(res));
     console.log(`Got response: ${res.statusCode}`);
-    console.log(`Access token: ${res.access_token}`);
-    console.log(`Scope: ${res.scope}`);
+    console.log(`Events: ${res._events}`);
+    // console.log(`Scope: ${res.scope}`);
 
     res.resume();
   }).on('error', (e) => {
