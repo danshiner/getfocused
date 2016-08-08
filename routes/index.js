@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/listener', function(req, res, next) {
 
-  // DAN: update this with an if statement based on action, eventually
 
   let event = req.body.event;
   let keyword = /#now/i;
@@ -19,6 +18,8 @@ router.post('/listener', function(req, res, next) {
   if (keyword.test(event.text)) {
     console.log(`We have a #now! Here's the string: ${event.text}`);
   };
+
+// go back to events subscription and remove im_created -- which sends you a message when someone creates a DM channel with user, but doesn't actually send anything. Not needed.
 
   console.log(`Request:${JSON.stringify(event)}`);
 
